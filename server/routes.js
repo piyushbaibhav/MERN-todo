@@ -20,14 +20,14 @@ router.post("/todos", (req, res) => {
 
 
 //Delete /todos/:id
-router.delete("/todos", (req, res) => {
+router.delete("/todos/:id", (req, res) => {
   res.status(200).json({ msg: "DELETE REQUEST to /api/todos/:id " });
 });
 
 
 
 //Put /todos/:id
-router.put("/todos", (req, res) => {
+router.put("/todos/:id", (req, res) => {
   res.status(200).json({ msg: "UPDATE REQUEST to /api/todos/:id " });
 });
 
