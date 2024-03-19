@@ -1,8 +1,18 @@
 
-import React from "react"
+import React,{useEffect} from "react"
 
-function App() {
+export default function App() {
   
+  useEffect(() => {
+    async function getTodos() {
+      const res = await fetch("/api/todos");
+      const todos = await res.json();
+
+      console.log(todos);
+    }
+    getTodos();
+  }, []);
+
 
   return (
     <main className="container">
@@ -13,4 +23,4 @@ function App() {
   )
 }
 
-export default App
+
