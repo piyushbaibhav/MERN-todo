@@ -9,29 +9,29 @@ router.get("/healthcheck", (req, res) => {
 
 
 //Get /todos
-router.get("/tasks",(req,res)=>{
+router.get("/todos",(req,res)=>{
     res.status(200).json({msg: "GET REQUEST to /api/todos"})
 });
-//Get specific /todos
-router.get("/tasks/:id",(req,res)=>{
+//Get by id /todos
+router.get("/todos/:id",(req,res)=>{
     res.status(200).json({msg: "GET REQUEST to /api/todos/:id"})
 });
 
 //Post /todos
-router.post("/post", (req, res) => {
+router.post("/todos", (req, res) => {
   res.status(201).json({ msg: "POST REQUEST to /api/todos" });
 });
 
 
 //Delete /todos/:id
-router.delete("/post/:id", (req, res) => {
+router.delete("/todos/:id", (req, res) => {
   res.status(200).json({ msg: "DELETE REQUEST to /api/todos/:id" });
 });
 
 
 
 //Put /todos/:id
-router.put("/post/:id", (req, res) => {
+router.put("/todos/:id", (req, res) => {
   res.status(200).json({ msg: "UPDATE REQUEST to /api/todos/:id" });
 });
 
