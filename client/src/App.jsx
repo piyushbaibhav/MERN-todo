@@ -17,7 +17,7 @@ export default function App() {
   return (
     <main className="container">
       <h1>Awesome Todos</h1>
-      {message && <p>{message}</p>}
+       <p>{message}</p>
     </main>
   );
 }
