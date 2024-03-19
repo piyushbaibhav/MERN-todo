@@ -1,26 +1,23 @@
-
-import React,{useEffect} from "react"
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [message, setMessage] = useState("");
   
   useEffect(() => {
-    async function getTodos() {
+    const getTodos = async () => {
       const res = await fetch("/api/todos");
       const todos = await res.json();
 
-      console.log(todos);
-    }
-    getTodos();
-  }, []);
+      setMessage(todos.mssg);
+    };
 
+    getTodos();
+  }, [])
 
   return (
     <main className="container">
-      <h1 className="text-center mt-5">
-        hello world
-      </h1>
+      <h1>Awesome Todos</h1>
+      {message && <p>{message}</p>}
     </main>
-  )
+  );
 }
-
-
